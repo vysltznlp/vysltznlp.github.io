@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://vysltznlp.github.io/sitemap.xml
