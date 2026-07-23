@@ -153,7 +153,7 @@ p {
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, 1fr));
     width: min(100%, 1040px);
     height: 640px;
@@ -191,37 +191,49 @@ p {
 
 .feature-card--main {
     min-height: 0;
-    background-image:
+    background:
         linear-gradient(90deg, rgba(7, 10, 11, 0.88), rgba(7, 10, 11, 0.18)),
-        var(--card-image, none),
-        radial-gradient(circle at 76% 24%, #3b555c 0, #1b2c30 32%, #111819 72%);
+        radial-gradient(circle at 76% 24%, #3b555c 0%, #1b2c30 32%, #111819 72%);
 }
 
 .feature-card--youtube {
     min-height: 0;
     background:
-        linear-gradient(0deg, rgba(12, 10, 7, 0.78), transparent 68%),
-        radial-gradient(circle at 72% 20%, #d8b46e 0 13%, transparent 13.5%),
-        linear-gradient(135deg, #4d3e2d, #191714 70%);
+        linear-gradient(90deg, rgba(12, 7, 8, 0.88), rgba(12, 7, 8, 0.18)),
+        radial-gradient(circle at 76% 24%, #55353a 0%, #301a1e 32%, #1a1012 72%);
 }
 
 .feature-card--academic {
     min-height: 0;
-    background-image:
-        linear-gradient(0deg, rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.15) 75%),
-        var(--card-image, none),
-        radial-gradient(circle at 25% 30%, #35403d 0, #1d2724 30%, #0f1110 75%);
+    background:
+        linear-gradient(90deg, rgba(9, 8, 12, 0.88), rgba(9, 8, 12, 0.18)),
+        radial-gradient(circle at 76% 24%, #4b4659 0%, #2a2535 32%, #16141b 72%);
 }
 
 .feature-card--shutterstock {
     min-height: 0;
     background:
-        linear-gradient(0deg, rgba(13, 8, 8, 0.88), transparent 70%),
-        radial-gradient(circle at 76% 26%, rgba(255, 255, 255, 0.15) 0 12%, transparent 12.5%),
-        linear-gradient(135deg, #7f1f1b, #221312 72%);
+        linear-gradient(90deg, rgba(12, 6, 10, 0.88), rgba(12, 6, 10, 0.18)),
+        radial-gradient(circle at 76% 24%, #583348 0%, #321928 32%, #1b0e16 72%);
+}
+
+.feature-card--letterboxd {
+    min-height: 0;
+    background:
+        linear-gradient(90deg, rgba(7, 11, 8, 0.88), rgba(7, 11, 8, 0.18)),
+        radial-gradient(circle at 76% 24%, #3d5940 0%, #203523 32%, #111b13 72%);
+}
+
+.feature-card--bin-kitap {
+    min-height: 0;
+    background:
+        linear-gradient(90deg, rgba(11, 9, 7, 0.88), rgba(11, 9, 7, 0.18)),
+        radial-gradient(circle at 76% 24%, #554c3e 0%, #31291f 32%, #1b1712 72%);
 }
 
 .feature-card__content {
+    position: relative;
+    z-index: 1;
     width: 100%;
     padding: 31px 33px;
 }
@@ -234,6 +246,7 @@ p {
     display: inline-block;
     margin-bottom: 14px;
     padding: 5px 10px 4px;
+    border-radius: 999px;
     color: #ffffff;
     font-size: 0.61rem;
     font-weight: 700;
@@ -242,20 +255,69 @@ p {
     text-transform: uppercase;
 }
 
-.feature-label--blue {
-    background: var(--color-blue);
+.feature-label--blog {
+    background: #0f5e87;
 }
 
-.feature-label--gold {
-    background: var(--color-gold);
+.feature-label--academic {
+    background: #634a9d;
 }
 
-.feature-label--green {
-    background: var(--color-green);
+.feature-label--youtube {
+    background: #b8202c;
 }
 
-.feature-label--red {
-    background: var(--color-red);
+.feature-label--shutterstock {
+    background: #8b1f74;
+}
+
+.feature-label--letterboxd {
+    color: #14181c;
+    background: #00e054;
+}
+
+.feature-label--bin-kitap {
+    color: #211a12;
+    background: #e8dcc2;
+}
+
+.feature-card--main .feature-link {
+    color: #9bdcff;
+}
+
+.feature-card--academic .feature-link {
+    color: #d8caee;
+}
+
+.feature-card--youtube .feature-link {
+    color: #ffadb4;
+}
+
+.feature-card--shutterstock .feature-link {
+    color: #f1b3e6;
+}
+
+.feature-card--letterboxd .feature-link {
+    color: #a9d9c0;
+}
+
+.feature-card--bin-kitap .feature-link {
+    color: #eadfc8;
+}
+
+.feature-card--internal .feature-link {
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 1px solid currentColor;
+}
+
+.feature-card--external .feature-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 11px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.16);
 }
 
 .feature-card h1,
@@ -263,7 +325,7 @@ p {
     max-width: 440px;
     margin-bottom: 16px;
     font-family: var(--serif);
-    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    font-size: clamp(1.2rem, 1.8vw, 1.55rem);
     line-height: 1.02;
     letter-spacing: -0.04em;
     text-wrap: balance;
@@ -462,7 +524,7 @@ a:focus-visible {
 
     .feature-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 260px);
+        grid-template-rows: repeat(6, 260px);
         height: auto;
     }
 
