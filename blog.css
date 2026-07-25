@@ -166,7 +166,7 @@ blockquote {
 .page-heading h1 {
     margin-bottom: 0;
     font-family: var(--serif);
-    font-size: clamp(3.3rem, 7vw, 5.8rem);
+    font-size: clamp(2.65rem, 5vw, 4.5rem);
     line-height: 0.9;
     letter-spacing: -0.06em;
 }
@@ -225,6 +225,50 @@ blockquote {
 .post-intro p:last-child,
 .post-more__content p:last-child {
     margin-bottom: 0;
+}
+
+.post-intro p + p {
+    margin-top: 20px;
+}
+
+.post-playlist-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    padding-bottom: 2px;
+    color: var(--color-accent);
+    border-bottom: 1px solid currentColor;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.post-playlist-link:hover,
+.post-playlist-link:focus-visible {
+    color: var(--color-ink);
+}
+
+.post-media {
+    width: 100%;
+    margin: 32px 0 0;
+    overflow: hidden;
+    background: #ededeb;
+    border: 1px solid var(--color-line-light);
+}
+
+.post-media a {
+    display: block;
+}
+
+.post-media img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 
 /* Devamını oku / daralt mekanizması */
