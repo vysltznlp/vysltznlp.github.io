@@ -485,6 +485,12 @@ a:focus-visible {
 
 /* Tablet */
 @media (max-width: 900px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+        height: 780px;
+    }
+
     .profile-inner {
         gap: 60px;
     }
